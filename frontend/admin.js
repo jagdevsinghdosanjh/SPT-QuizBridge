@@ -51,6 +51,25 @@ document.getElementById("export-csv").addEventListener("click", () => {
   a.download = "quiz_results.csv";
   a.click();
 });
+document.getElementById("export-pdf").addEventListener("click", async () => {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.setFontSize(12);
+  doc.text("SPT-QuizBridge Results", 10, 10);
+
+  let y = 20;
+  allResults.forEach((r, i) => {
+    doc.text(`${i + 1}. ${r.student} — ${r.score}/${r.total} on ${new Date(r.submitted_at).toLocaleString()}`, 10, y);
+    y += 8;
+    if (y > 280) {
+      doc.addPage();
+      y = 10;
+    }
+  });
+
+  doc.save("quiz_results.pdf");
+});
+
 
 // fetch("http://localhost:5000/api/results")
 //   .then(res => res.json())
