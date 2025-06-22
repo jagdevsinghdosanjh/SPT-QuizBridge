@@ -1,0 +1,172 @@
+[
+    {
+        "id": 1,
+        "question": "Which of the following expressions represents a polynomial?",
+        "options": [
+            "x^2 + 3x + 2",
+            "sin(x)",
+            "1/x",
+            "log(x)"
+        ],
+        "correct": "x^2 + 3x + 2"
+    },
+    {
+        "id": 2,
+        "question": "What is the degree of the polynomial: 4x^5 - 2x^3 + 7?",
+        "options": [
+            "5",
+            "3",
+            "4",
+            "2"
+        ],
+        "correct": "5"
+    }
+]
+[
+    {
+        "id": 3,
+        "question": "Which of the following is a factor of the polynomial x^2 - 5x + 6?",
+        "options": [
+            "(x - 2)",
+            "(x + 3)",
+            "(x - 1)",
+            "(x + 2)"
+        ],
+        "correct": "(x - 2)"
+    },
+    {
+        "id": 4,
+        "question": "What is the result of factoring the polynomial x^2 - 9?",
+        "options": [
+            "(x - 3)(x + 3)",
+            "(x + 3)(x + 3)",
+            "(x - 9)(x + 1)",
+            "(x - 1)(x + 9)"
+        ],
+        "correct": "(x - 3)(x + 3)"
+    }
+]
+[
+    {
+        "id": 5,
+        "question": "What is the sum of the roots of the polynomial x^2 - 4x + 3?",
+        "options": [
+            "4",
+            "3",
+            "2",
+            "1"
+        ],
+        "correct": "4"
+    },
+    {
+        "id": 6,
+        "question": "Which of the following is a polynomial function?",
+        "options": [
+            "f(x) = x^3 - 2x + 1",
+            "f(x) = e^x",
+            "f(x) = sin(x)",
+            "f(x) = 1/x"
+        ],
+        "correct": "f(x) = x^3 - 2x + 1"
+    }
+]
+[
+    {
+        "id": 7,
+        "question": "What is the leading coefficient of the polynomial 3x^4 - 5x^3 + 2?",
+        "options": [
+            "3",
+            "-5",
+            "2",
+            "0"
+        ],
+        "correct": "3"
+    },
+    {
+        "id": 8,
+        "question": "Which of the following is a zero of the polynomial x^2 - 4?",
+        "options": [
+            "2",
+            "-2",
+            "0",
+            "1"
+        ],
+        "correct": "2"
+    }
+},
+{
+    "id": 9,
+    "question": "What is the value of the polynomial 2x^2 + 3x - 5 at x = 1?",
+    "options": [
+        "0",
+        "1",
+        "-1",
+        "2"
+    ],
+    "correct": "0"
+},
+{
+    "id": 10,
+    "question": "Which of the following is not a polynomial?",
+    "options": [
+        "x^3 + 2x^2 - x + 1",
+        "4/x + x^2",
+        "5x - 3",
+        "x^4 + x^2"
+    ],
+    "correct": "4/x + x^2"
+}
+    {
+    "id": 11,
+    "question": "What is the product of the roots of the polynomial x^2 - 6x + 8?",
+    "options": [
+        "8",
+        "6",
+        "2",
+        "4"
+    ],
+    "correct": "8"
+},
+{
+    "id": 12,
+    "question": "Which of the following is a polynomial of degree 3?",
+    "options": [
+        "x^3 - 4x + 1",
+        "sin(x)",
+        "e^x",
+        "log(x)"
+    ],
+    "correct": "x^3 - 4x + 1"
+},
+{
+    "id": 13,
+    "question": "What is the value of the polynomial 5x^2 - 3x + 2 at x = 2?",
+    "options": [
+        "12",
+        "10",
+        "8",
+        "6"
+    ],
+    "correct": "12"
+},
+{
+    "id": 14,
+    "question": "Which of the following is a polynomial function?",
+    "options": [
+        "f(x) = 2x^3 + 3x^2 - x + 5",
+        "f(x) = e^x",
+        "f(x) = sin(x)",
+        "f(x) = 1/x"
+    ],
+    "correct": "f(x) = 2x^3 + 3x^2 - x + 5"
+},
+{
+    "id": 15,
+    "question": "What is the degree of the polynomial 7x^4 - 3x^2 + 1?",
+    "options": [
+        "4",
+        "2",
+        "3",
+        "1"
+    ] 
+]
