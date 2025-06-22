@@ -2,8 +2,24 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import json
 import random
+from pymongo import MongoClient
+from datetime import datetime
 
 app = Flask(__name__)
+client = MongoClient("mongodb://localhost:27017/")  # Use your actual connection string if hosted
+db = client["spt_quiz"]
+results_collection = db["results"]
+
+@app.route('/')
+def home():
+    return '✅ SPT-QuizBridge backend is running!'
+
+@app.route('/api/results', methods=['GET'])
+def get_results():
+    results = list(results_collection.find({}, {'_id': 0}))
+    return jsonify(results)
+
+
 CORS(app)  # Enables requests from your frontend
 
 # Load questions from JSON file
@@ -41,6 +57,13 @@ def submit_quiz():
         'score': score,
         'feedback': feedback
     }
+    results_collection.insert_one({
+    "student": student,
+    "answers": user_answers,
+    "score": score,
+    "total": len(user_answers),
+    "submitted_at": datetime.utcnow()
+})
 
     print(f"[LOG] {student} scored {score} / {len(user_answers)}")
     return jsonify(result)
