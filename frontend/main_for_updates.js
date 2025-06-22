@@ -11,17 +11,6 @@ function renderQuiz(questions) {
   const container = document.getElementById("quiz-container");
   container.innerHTML = "";
 
-  // Create input for student name
-  const nameInput = document.createElement("div");
-  nameInput.innerHTML = `
-    <label>
-      Name:
-      <input type="text" id="student-name" placeholder="Enter your name" required />
-    </label><br><br>
-  `;
-  container.appendChild(nameInput);
-
-  // Render each question
   questions.forEach((q, idx) => {
     const qDiv = document.createElement("div");
     qDiv.innerHTML = `
@@ -35,13 +24,20 @@ function renderQuiz(questions) {
     container.appendChild(qDiv);
   });
 
-  // Add submit button
   const submitBtn = document.createElement("button");
   submitBtn.textContent = "Submit Quiz";
   submitBtn.onclick = handleSubmit;
   container.appendChild(submitBtn);
 }
 
+// function handleSubmit() {
+//   const answers = quizData.map(q => {
+//     const selected = document.querySelector(`input[name="q${q.id}"]:checked`);
+//     return {
+//       id: q.id,
+//       selected: selected ? selected.value : null
+//     };
+//   });
 function handleSubmit() {
   const name = document.getElementById("student-name").value.trim();
   if (!name) {
@@ -68,13 +64,25 @@ function handleSubmit() {
   });
 }
 
+
+  fetch("http://localhost:5000/api/submit", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ answers })
+  })
+  .then(res => res.json())
+  .then(result => {
+    showFeedback(result);
+  });
+}
+
 function showFeedback(result) {
   const container = document.getElementById("quiz-container");
   const feedbackDiv = document.createElement("div");
   feedbackDiv.className = "feedback";
 
   feedbackDiv.innerHTML = `
-    <h3>${result.student}, your score is: ${result.score} / ${quizData.length}</h3>
+    <h3>Your Score: ${result.score} / ${quizData.length}</h3>
     ${result.feedback.map(f => `
       <p>Q${f.id}: ${f.correct ? "✅ Correct" : `❌ Incorrect – Correct answer: ${f.correct_answer}`}</p>
     `).join("")}
