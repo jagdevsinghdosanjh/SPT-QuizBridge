@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPT-QuizBridge Results</title>
+  <style>
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background-color: #f2f2f2; }
+    h2 { text-align: center; }
+  </style>
+</head>
+<body>
+  <h2>📊 Quiz Results Dashboard</h2>
+  <input type="text" id="search-box" placeholder="Search by name..." />
+  <table id="results-table">
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>Score</th>
+        <th>Total</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+<button id="export-csv">Export to CSV</button>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
